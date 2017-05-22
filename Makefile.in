@@ -247,6 +247,7 @@ am__lib_libknl_la_SOURCES_DIST = src/configs/knl/bli_packm_opt_24x8.c \
 	src/configs/knl/bli_packm_opt_30x8.c \
 	src/configs/knl/bli_dgemm_opt_12x16.c \
 	src/configs/knl/bli_dgemm_opt_24x8.c \
+	src/configs/knl/bli_dgemm_opt_24x8_2.c \
 	src/configs/knl/bli_dgemm_opt_30x8.c \
 	src/configs/knl/bli_dgemm_opt_8x24.c \
 	src/configs/knl/bli_dgemm_opt_30x8_knc.c \
@@ -256,6 +257,7 @@ am__lib_libknl_la_SOURCES_DIST = src/configs/knl/bli_packm_opt_24x8.c \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_packm_opt_30x8.lo \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_12x16.lo \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8.lo \
+@ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8.lo \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_8x24.lo \
 @ENABLE_KNL_TRUE@	src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8_knc.lo \
@@ -816,6 +818,7 @@ lib_libtblis_la_LIBADD = src/external/tci/lib/libtci.la \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_packm_opt_30x8.c \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_12x16.c \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_24x8.c \
+@ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_24x8_2.c \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_30x8.c \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_8x24.c \
 @ENABLE_KNL_TRUE@					   src/configs/knl/bli_dgemm_opt_30x8_knc.c \
@@ -1033,6 +1036,9 @@ src/configs/knl/lib_libknl_la-bli_dgemm_opt_12x16.lo:  \
 	src/configs/knl/$(am__dirstamp) \
 	src/configs/knl/$(DEPDIR)/$(am__dirstamp)
 src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8.lo:  \
+	src/configs/knl/$(am__dirstamp) \
+	src/configs/knl/$(DEPDIR)/$(am__dirstamp)
+src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo:  \
 	src/configs/knl/$(am__dirstamp) \
 	src/configs/knl/$(DEPDIR)/$(am__dirstamp)
 src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8.lo:  \
@@ -1346,6 +1352,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/haswell/$(DEPDIR)/lib_libhaswell_la-config.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_12x16.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_24x8.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_24x8_2.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_30x8.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_30x8_knc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_8x24.Plo@am__quote@
@@ -1500,6 +1507,13 @@ src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8.lo: src/configs/knl/bli_dgemm_o
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/configs/knl/bli_dgemm_opt_24x8.c' object='src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libknl_la_CFLAGS) $(CFLAGS) -c -o src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8.lo `test -f 'src/configs/knl/bli_dgemm_opt_24x8.c' || echo '$(srcdir)/'`src/configs/knl/bli_dgemm_opt_24x8.c
+
+src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo: src/configs/knl/bli_dgemm_opt_24x8_2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libknl_la_CFLAGS) $(CFLAGS) -MT src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo -MD -MP -MF src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_24x8_2.Tpo -c -o src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo `test -f 'src/configs/knl/bli_dgemm_opt_24x8_2.c' || echo '$(srcdir)/'`src/configs/knl/bli_dgemm_opt_24x8_2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_24x8_2.Tpo src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_24x8_2.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/configs/knl/bli_dgemm_opt_24x8_2.c' object='src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libknl_la_CFLAGS) $(CFLAGS) -c -o src/configs/knl/lib_libknl_la-bli_dgemm_opt_24x8_2.lo `test -f 'src/configs/knl/bli_dgemm_opt_24x8_2.c' || echo '$(srcdir)/'`src/configs/knl/bli_dgemm_opt_24x8_2.c
 
 src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8.lo: src/configs/knl/bli_dgemm_opt_30x8.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libknl_la_CFLAGS) $(CFLAGS) -MT src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8.lo -MD -MP -MF src/configs/knl/$(DEPDIR)/lib_libknl_la-bli_dgemm_opt_30x8.Tpo -c -o src/configs/knl/lib_libknl_la-bli_dgemm_opt_30x8.lo `test -f 'src/configs/knl/bli_dgemm_opt_30x8.c' || echo '$(srcdir)/'`src/configs/knl/bli_dgemm_opt_30x8.c

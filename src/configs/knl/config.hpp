@@ -10,6 +10,7 @@ EXTERN_GEMM_UKR( float, bli_sgemm_opt_30x16_knc);
 EXTERN_GEMM_UKR(double, bli_dgemm_opt_30x8_knc);
 EXTERN_GEMM_UKR(double, bli_dgemm_opt_30x8);
 EXTERN_GEMM_UKR(double, bli_dgemm_opt_24x8);
+EXTERN_GEMM_UKR(double, bli_dgemm_opt_24x8_2);
 EXTERN_GEMM_UKR(double, bli_dgemm_opt_8x24);
 
 }
@@ -95,6 +96,29 @@ TBLIS_BEGIN_CONFIG(knl_d24x8)
 
 TBLIS_END_CONFIG
 
+TBLIS_BEGIN_CONFIG(knl_d24x8_2)
+
+    TBLIS_CONFIG_GEMM_MR(_,    24, _, _)
+    TBLIS_CONFIG_GEMM_NR(_,     8, _, _)
+    TBLIS_CONFIG_GEMM_KR(_,     8, _, _)
+    TBLIS_CONFIG_GEMM_MC(_,   504, _, _)
+    TBLIS_CONFIG_GEMM_NC(_, 14400, _, _)
+    TBLIS_CONFIG_GEMM_KC(_,    96, _, _)
+
+    TBLIS_CONFIG_GEMM_UKR(_, bli_dgemm_opt_24x8_2, _, _)
+
+    TBLIS_CONFIG_PACK_NN_MR_UKR(_, knl_packm_24xk, _, _)
+    TBLIS_CONFIG_PACK_NN_NR_UKR(_, knl_packm_8xk , _, _)
+
+    TBLIS_CONFIG_GEMM_ROW_MAJOR(_, true, _, _)
+
+    TBLIS_CONFIG_M_THREAD_RATIO(_, 4, _, _)
+    TBLIS_CONFIG_NR_MAX_THREAD(_, 1, _, _)
+
+    TBLIS_CONFIG_CHECK(knl_check)
+
+TBLIS_END_CONFIG
+
 TBLIS_BEGIN_CONFIG(knl_d8x24)
 
     TBLIS_CONFIG_GEMM_MR    (_,     8, _, _)
@@ -119,7 +143,7 @@ TBLIS_BEGIN_CONFIG(knl_d8x24)
 
 TBLIS_END_CONFIG
 
-typedef knl_d24x8_config knl_config;
+typedef knl_d24x8_2_config knl_config;
 
 }
 

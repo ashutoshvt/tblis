@@ -233,6 +233,7 @@ lib_libknl_la_SOURCES = src/configs/knl/bli_packm_opt_24x8.c \
 					   src/configs/knl/bli_packm_opt_30x8.c \
 					   src/configs/knl/bli_dgemm_opt_12x16.c \
 					   src/configs/knl/bli_dgemm_opt_24x8.c \
+					   src/configs/knl/bli_dgemm_opt_24x8_2.c \
 					   src/configs/knl/bli_dgemm_opt_30x8.c \
 					   src/configs/knl/bli_dgemm_opt_8x24.c \
 					   src/configs/knl/bli_dgemm_opt_30x8_knc.c \
